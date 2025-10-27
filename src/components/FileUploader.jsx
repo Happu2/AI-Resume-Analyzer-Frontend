@@ -1,20 +1,19 @@
 import { useState } from 'react';
 
-// Accept isDarkMode prop
 const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
   const [file, setFile] = useState(null);
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       const selectedFile = e.target.files[0];
-      // --- UPDATE: Allow PDF files only ---
+      
       if (selectedFile.type === "application/pdf") {
         setFile(selectedFile);
       } else {
         alert("Please upload a .pdf file.");
-        e.target.value = null; // Clear the input
+        e.target.value = null; 
       }
-      // --- END UPDATE ---
+     
     }
   };
 
@@ -25,7 +24,6 @@ const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
     }
   };
 
-  // Define styles based on isDarkMode
   const bgColor = isDarkMode ? 'bg-gray-800' : 'bg-white';
   const textColor = isDarkMode ? 'text-gray-300' : 'text-gray-500';
   const headingColor = isDarkMode ? 'text-white' : 'text-gray-900';
@@ -35,7 +33,6 @@ const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
   const dashedBorderColor = isDarkMode ? 'border-gray-500' : 'border-gray-300';
   const iconColor = isDarkMode ? 'text-gray-500' : 'text-gray-400';
   const selectedFileTextColor = isDarkMode ? 'text-gray-400' : 'text-gray-700';
-  // const linkColor = isDarkMode ? 'text-green-400' : 'text-green-600'; // No longer needed
 
   return (
     <div className={`${bgColor} p-8 rounded-lg shadow-xl border ${borderColor}`}>
@@ -47,7 +44,7 @@ const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
           htmlFor="file-upload"
           className={`flex flex-col items-center justify-center w-full h-48 border-2 border-dashed ${dashedBorderColor} rounded-lg cursor-pointer ${labelBgColor} ${labelHoverBgColor} transition-colors`}
         >
-          {/* Upload Icon */}
+        
           <svg className={`w-10 h-10 mb-3 ${iconColor}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-4-4V7a4 4 0 014-4h.5A5.5 5.5 0 0112 7.5v.1a5.5 5.5 0 015.5 5.4v.1a4 4 0 01-4 4h-.5m-9-4H17"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 11v6m0 0l-3-3m3 3l3-3"></path></svg>
 
           <p className={`mb-2 text-sm ${textColor}`}>
@@ -60,7 +57,7 @@ const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
             type="file"
             className="hidden"
             onChange={handleFileChange}
-            accept=".pdf" // --- UPDATE: Allow .pdf files only ---
+            accept=".pdf" 
           />
         </label>
 
@@ -78,11 +75,6 @@ const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
           {isLoading ? 'Analyzing...' : 'Analyze File'}
         </button>
 
-        {/* --- REMOVED SAMPLE DATA LINK --- */}
-        {/* <p className={`text-center text-sm mt-4 ${textColor}`}>
-          Want to see how it works? <a href="#" onClick={(e) => e.preventDefault()} className={`${linkColor} font-medium hover:underline`}>Try with sample data</a>
-        </p> 
-        */}
       </form>
     </div>
   );

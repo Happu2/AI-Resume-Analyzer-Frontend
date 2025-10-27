@@ -26,9 +26,9 @@ const JobResults = ({ jobs, isDarkMode }) => {
           {jobs.map((job) => {
             const isExpanded = expandedJobId === job.id;
 
-            // Define colors based on both dark mode and expansion state
+            
             const itemBgColor = isExpanded
-                ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-100') // Slightly different background when expanded
+                ? (isDarkMode ? 'bg-gray-700' : 'bg-gray-100') 
                 : (isDarkMode ? 'bg-gray-800' : 'bg-white');
             const itemTextColor = isDarkMode ? 'text-gray-100' : 'text-gray-800';
             const itemSecondaryTextColor = isDarkMode ? 'text-gray-400' : 'text-gray-600';
@@ -63,7 +63,6 @@ const JobResults = ({ jobs, isDarkMode }) => {
                 </div>
 
                 {isExpanded && (
-                  // Pass dark mode text colors to AiFeedback
                   <AiFeedback job={job} isDarkMode={isDarkMode} />
                 )}
               </div>
