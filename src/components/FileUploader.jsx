@@ -35,7 +35,7 @@ const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
   const dashedBorderColor = isDarkMode ? 'border-gray-500' : 'border-gray-300';
   const iconColor = isDarkMode ? 'text-gray-500' : 'text-gray-400';
   const selectedFileTextColor = isDarkMode ? 'text-gray-400' : 'text-gray-700';
-  const linkColor = isDarkMode ? 'text-green-400' : 'text-green-600';
+  // const linkColor = isDarkMode ? 'text-green-400' : 'text-green-600'; // No longer needed
 
   return (
     <div className={`${bgColor} p-8 rounded-lg shadow-xl border ${borderColor}`}>
@@ -78,9 +78,11 @@ const FileUploader = ({ onFileUpload, isLoading, isDarkMode }) => {
           {isLoading ? 'Analyzing...' : 'Analyze File'}
         </button>
 
-        <p className={`text-center text-sm mt-4 ${textColor}`}>
+        {/* --- REMOVED SAMPLE DATA LINK --- */}
+        {/* <p className={`text-center text-sm mt-4 ${textColor}`}>
           Want to see how it works? <a href="#" onClick={(e) => e.preventDefault()} className={`${linkColor} font-medium hover:underline`}>Try with sample data</a>
-        </p>
+        </p> 
+        */}
       </form>
     </div>
   );

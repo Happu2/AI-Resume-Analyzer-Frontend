@@ -86,7 +86,7 @@ export default function App() {
         <FeatureCard
           icon="⬇️"
           title="Multi-Format Export"
-          description="Export your new resume in PDF, DOCX, and HTML formats."
+          description="Export your new resume in PDF."
           isDarkMode={isDarkMode}
         />
       </div>
