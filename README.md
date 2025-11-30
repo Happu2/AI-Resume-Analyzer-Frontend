@@ -1,4 +1,4 @@
-# Orbit Career: AI Resume Analyzer
+#  CareerFit: AI Resume Analyzer
 
 **Live Frontend (Vercel):** https://ai-resume-analyzer-frontend.vercel.app  
 **Live Backend (Render):** https://ai-resume-analyzer-backend-c3zk.onrender.com
