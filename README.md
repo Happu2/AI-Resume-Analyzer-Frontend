@@ -1,7 +1,7 @@
 #  CareerFit: AI Resume Analyzer
 
 **Live Frontend (Vercel):** https://aianalyz.netlify.app/
-**Live Backend (Render):** https://ai-resume-analyzer-backend-c3zk.onrender.com
+**Live Backend (Render):** https://ai-resume-analyzer-backend-kjx1.onrender.com/
 
 ---
 
